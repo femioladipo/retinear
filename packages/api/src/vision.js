@@ -76,8 +76,8 @@ const getImageDescription = async (imageUrl) => {
 /**
  * Given an image, analyse it and return all the tags associated with it
  */
-const getImageTags = (imageUrl) => {
-    const { description : { tags = [] } } = analyseImage(imageUrl);
+const getImageTags = async (imageUrl) => {
+    const { description : { tags = [] } } = await analyseImage(imageUrl);
 
     return tags;
 }
