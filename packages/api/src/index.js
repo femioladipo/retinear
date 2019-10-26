@@ -1,6 +1,7 @@
 const functions = require('firebase-functions')
 const express = require('express')
 
+const getSiteJSON = require('./scraper')
 const getTextSummary = require('./text_summary')
 const { getImageDescription, getImageTags } = require('./vision');
 const readingTime = require('./length')
@@ -15,13 +16,14 @@ const constructFinalStatement = (websiteName, timeToRead, imageCaptions, textSum
   Finally, the page is about: ${textSummary},
 `
 
-
 app.post('/', async (req, res) => {
-  const { websiteName, text, img_urls } = req.body
-  const textSummary = await getTextSummary(text).then(({ output }) => output)
-  const timeToRead = readingTime(text)
-  const imageCaptions = await getImageDescription(img_urls);
-  return res.send(constructFinalStatement(websiteName, timeToRead, [], textSummary))
+  const data = await getSiteJSON(req.body.url)
+  // const { websiteName, title, text, img_urls } = data
+  console.log(data)
+  // const textSummary = await getTextSummary(text).then(({ output }) => output)
+  // const timeToRead = readingTime(text)
+  // const imageCaptions = await Promise.all(img_urls.map(img_url => getImageDescription(img_url)))
+  // return res.send(constructFinalStatement(websiteName, timeToRead, imageCaptions, textSummary))
 })
 
 app.use('*', (req, res) => {
