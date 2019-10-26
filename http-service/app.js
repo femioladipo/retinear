@@ -6,9 +6,12 @@ const port = 3000;
 
 app.use(cors());
 
-app.get('/getpage', function (req, res) {
+const getPage = '/getpage';
+const pageQuery = getPage + '?url='; 
+
+app.get(getPage, function (req, res) {
     
-    var url = req.query.url;
+    const url = req.query.url;
     
     console.log(url);
     
@@ -26,6 +29,17 @@ app.get('/getpage', function (req, res) {
 
       // The whole response has been received. Print out the result.
       resp.on('end', () => {
+        
+        var pathArray = url.split("/");
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var root = protocol + '//' + host;
+        
+        data = data.replace('src="/', 'src="' + root + '/');
+        data = data.replace('srcset="/', 'srcset="' + root + '/');
+        // data = data.replace('action="/', 'action="' + pageQuery + root + '/');
+        // data = data.replace('href="', 'href="' + pageQuery);
+
         res.write(data);
       });
 
