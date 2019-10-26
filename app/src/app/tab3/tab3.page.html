@@ -12,7 +12,33 @@
 
 <ion-content>
 
+  <ion-content fullscreen padding scroll-y="false">
+        <ion-slides>
 
+
+          <ion-slide>
+            <h2>Personalisation</h2>
+            <ion-item-divider></ion-item-divider>
+
+            <ion-item lines="full">
+              <ion-icon slot="start" name="moon"></ion-icon>
+              <ion-label>
+                Toggle Dark Theme
+              </ion-label>
+              <ion-toggle (click)="clickToggle()" slot="end"></ion-toggle>
+            </ion-item>
+
+          </ion-slide>
+
+          <ion-slide>
+            <img src="https://miro.medium.com/max/8064/1*RXBy1Ie-lTaGiSgcgzzCBg.jpeg"/>
+            <h2>About Us</h2>
+            <ion-item-divider></ion-item-divider>
+
+
+          </ion-slide>
+
+        </ion-slides>
 
 
 
