@@ -1,13 +1,43 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { WebView } from 'react-native-webview';
+import { createAppContainer } from 'react-navigation';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+interface IProps {
+
 }
+
+interface IState {
+
+}
+
+class Browser extends React.Component<IProps, IState> {
+
+  render() {
+      return (
+          <WebView source={{ uri: 'https://facebook.github.io/react-native/' }} />
+      );
+  }
+
+  onNavChange(webViewState) {
+      console.log(webViewState.url);
+  }
+}
+
+class Settings extends React.Component {
+
+    render() {
+        return (
+            <WebView source={{ uri: 'https://facebook.github.io/react-native/' }} />
+        );
+    }
+
+    onNavChange(webViewState) {
+        console.log(webViewState.url);
+    }
+}
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
