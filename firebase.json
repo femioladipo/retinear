@@ -1,5 +1,9 @@
 {
   "functions": {
     "source": "packages/api"
-  }
+  },
+  "predeploy": [
+    "npm --prefix \"$RESOURCE_DIR\" run install",
+    "npm --prefix \"$RESOURCE_DIR\" run build"
+  ]
 }
