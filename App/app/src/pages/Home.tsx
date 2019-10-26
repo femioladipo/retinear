@@ -2,7 +2,7 @@ import {IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar} f
 import React from 'react';
 
 interface IState {
-    page: string;
+
 }
 
 interface IProps {
@@ -13,11 +13,9 @@ class Home extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.setState({
-            page: "Loading...",
-        });
+        this.state = {
 
-        
+        };
     }
 
     render() {
@@ -34,9 +32,7 @@ class Home extends React.Component<IProps, IState> {
                             Test
                         </IonRow>
                         <IonRow>
-                            <div dangerouslySetInnerHTML={{ __html: page }}>
-
-                            </div>
+                            Test 1
                         </IonRow>
                     </IonGrid>
                 </IonContent>
