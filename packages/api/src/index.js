@@ -20,18 +20,8 @@ app.post('/', async (req, res) => {
   const { websiteName, text, img_urls } = req.body
   const textSummary = await getTextSummary(text).then(({ output }) => output)
   const timeToRead = readingTime(text)
-  // const imageCaptions = img_desc(img_urls)
+  const imageCaptions = await getImageDescription(img_urls);
   return res.send(constructFinalStatement(websiteName, timeToRead, [], textSummary))
-})
-
-
-app.post('/img_desc', async (req, res) => {
-
-  // const imageUrl =
-  // 'https://www.w3schools.com/w3css/img_lights.jpg';
-  console.log('image sent')
-  const description = await getImageDescription(req.body.url);
-  return res.status(200).send(description);
 })
 
 app.use('*', (req, res) => {
