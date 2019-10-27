@@ -3,6 +3,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { FloatingAction } from "react-native-floating-action";
 import * as Speech from 'expo-speech';
+import axios from 'axios';
 
 class Browser extends React.Component {
   state = {
@@ -12,9 +13,13 @@ class Browser extends React.Component {
 
   onNavChange = async ({ url }) => {
     if (url !== this.state.url) {
-      this.setState({ url })
+      this.setState({ url });
       // response = await call api
-      // Speech.speak(response);
+      const resp = await axios.post('https://us-central1-retinear-3f1c7.cloudfunctions.net/api', {
+        url
+      });
+      console.log(resp);
+      // Speech.speak(response);-
       Speech.speak('React Native Speech, testing 123.');
     }
   }
