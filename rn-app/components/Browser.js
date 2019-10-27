@@ -6,7 +6,8 @@ import * as Speech from 'expo-speech';
 
 class Browser extends React.Component {
   state = {
-    url: ""
+    url: "",
+    canGoBack: false
   };
 
   onNavChange = async ({ url }) => {
@@ -20,6 +21,7 @@ class Browser extends React.Component {
 
   onBack() {
     this.refs[WEBVIEW_REF].goBack();
+    this.setState({ canGoBack: false })
   }
 
   render() {
@@ -29,9 +31,11 @@ class Browser extends React.Component {
           source={{ uri: 'https://google.com' }}
           onNavigationStateChange={this.onNavChange}
         />
-        <FloatingAction
-          onPressMain={() => console.log('pressed')}
-        />
+        {this.state.canGoBack &&
+          <FloatingAction
+            onPressMain={() => console.log('pressed')}
+          />
+        }
       </SafeAreaView>
     );
   }
