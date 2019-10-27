@@ -6,6 +6,8 @@ const getTextSummary = require('./npl')
 const getImageDescription = require('./computerVision');
 const readingTime = require('./length')
 
+const cache = require('./cache')
+
 const app = express()
 
 const constructFinalStatement = (websiteName, timeToRead, imageCaptions, textSummary) => `
@@ -15,7 +17,7 @@ const constructFinalStatement = (websiteName, timeToRead, imageCaptions, textSum
   Finally, the page is about: ${textSummary},
 `
 
-app.post('/', async (req, res) => {
+app.post('/', cache(60 * 60 * 2), async (req, res) => {
   const data = await getSiteJSON(req.body.url)
   const { websiteName, title, text, img_urls } = data
   const textSummary = await getTextSummary(text)

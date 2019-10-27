@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { FloatingAction } from "react-native-floating-action";
+import { Ionicons } from '@expo/vector-icons';
 import * as Speech from 'expo-speech';
 import parseDomain from 'parse-domain'
 
@@ -15,8 +16,8 @@ class Browser extends React.Component {
 
   onNavChange = async ({ url }) => {
     console.log(parseDomain(url), url)
+    this.setState({ url, canGoBack: true });
     if (parseDomain(url).domain !== 'google' && url !== this.state.url) {
-      this.setState({ url, canGoBack: true });
       console.log(url)
       const res = await fetch('https://us-central1-retinear-3f1c7.cloudfunctions.net/api', {
         method: 'POST',
@@ -32,6 +33,7 @@ class Browser extends React.Component {
   onBack = () => {
     this.WEBVIEW_REF.goBack();
     this.setState({ canGoBack: false })
+    Speech.stop()
   }
 
   render() {
@@ -41,12 +43,15 @@ class Browser extends React.Component {
           ref={ref => {
             this.WEBVIEW_REF = ref
           }}
-          source={{ uri: 'https://google.com' }}
+          source={{ uri: 'https://www.google.com' }}
           onNavigationStateChange={this.onNavChange}
         />
-        <FloatingAction
-          onPressMain={this.onBack}
-        />
+        {this.state.canGoBack &&
+          <FloatingAction
+            floatingIcon={() => <Ionicons name="arrow-bold-left" />}
+            onPressMain={this.onBack}
+          />
+        }
       </SafeAreaView>
     );
   }
