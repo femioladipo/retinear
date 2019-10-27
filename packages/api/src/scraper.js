@@ -22,6 +22,8 @@ const scrapper = async (url) => {
 
     });
     await browser.close();
+
+    return data
 };
 
 module.exports = exports = scrapper
