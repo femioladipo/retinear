@@ -8,7 +8,7 @@ import parseDomain from 'parse-domain'
 
 class Browser extends React.Component {
   state = {
-    url: "",
+    url: "https://www.google.com",
     canGoBack: false
   };
 
@@ -18,7 +18,6 @@ class Browser extends React.Component {
     console.log(parseDomain(url), url)
     this.setState({ url, canGoBack: true });
     if (parseDomain(url).domain !== 'google' && url !== this.state.url) {
-      console.log(url)
       const res = await fetch('https://us-central1-retinear-3f1c7.cloudfunctions.net/api', {
         method: 'POST',
         body: JSON.stringify({ url }),
@@ -43,15 +42,13 @@ class Browser extends React.Component {
           ref={ref => {
             this.WEBVIEW_REF = ref
           }}
-          source={{ uri: 'https://www.google.com' }}
+          source={{ uri: this.state.url }}
           onNavigationStateChange={this.onNavChange}
         />
-        {this.state.canGoBack &&
-          <FloatingAction
-            floatingIcon={() => <Ionicons name="arrow-bold-left" />}
-            onPressMain={this.onBack}
-          />
-        }
+        <FloatingAction
+          floatingIcon={<Ionicons name="md-arrow-back" size={32} color="white" />}
+          onPressMain={this.onBack}
+        />
       </SafeAreaView>
     );
   }
