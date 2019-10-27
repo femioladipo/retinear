@@ -6,7 +6,6 @@ const getTextSummary = require('./text_summary')
 const { getImageDescription, getImageTags } = require('./vision');
 const readingTime = require('./length')
 
-
 const app = express()
 
 const constructFinalStatement = (websiteName, timeToRead, imageCaptions, textSummary) => `
