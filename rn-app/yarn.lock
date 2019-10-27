@@ -2020,6 +2020,11 @@ expo-permissions@~7.0.0:
   resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-7.0.0.tgz#f4135c3cf8e49c673a9a714459a1eb2b40fe2092"
   integrity sha512-C+qyVz+pdZO4YpVR2HSC3gsBZg0Qb8brCFgzmDmWcAtgrOiHClaLPdhI2XtQuGh8ubXcKPUGZp++UCEGiG0Jxg==
 
+expo-speech@~7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/expo-speech/-/expo-speech-7.0.0.tgz#e0d78dc78e5e9e9ba13f33ba61c3f9a05a9da5c2"
+  integrity sha512-746OmuP0os0z8750s0hwALIVQS7wGDFMwC4+C1eFLEZrN65i2695CTh6MyRTaOwTN87AVVak6j585sQ680MqyQ==
+
 expo-sqlite@~7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/expo-sqlite/-/expo-sqlite-7.0.0.tgz#f52585b342278b4034c06caac8384edb2531afa4"
@@ -4242,6 +4247,11 @@ react-native-branch@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-3.0.1.tgz#5b07b61cbd290168cd3c3662e017ebe0f356d2ca"
   integrity sha512-vbcYxPZlpF5f39GAEUF8kuGQqCNeD3E6zEdvtOq8oCGZunHXlWlKgAS6dgBKCvsHvXgHuMtpvs39VgOp8DaKig==
+
+react-native-floating-action@^1.19.1:
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/react-native-floating-action/-/react-native-floating-action-1.19.1.tgz#fc3dcd0441ecbaf2d870b71f6db27f2db0f811b3"
+  integrity sha512-6zgiCJyV63TOxpDKK+OxzhghMcBSn1Qhjb8p8TrfrUGAkzh7gQcmNN4ahq1CVbrN0ZpKhWET68WeifisYnQWyg==
 
 react-native-gesture-handler@^1.4.1:
   version "1.4.1"

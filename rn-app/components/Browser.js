@@ -1,19 +1,25 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
-// import { FloatingAction } from "react-native-floating-action";
+import { FloatingAction } from "react-native-floating-action";
+import * as Speech from 'expo-speech';
 
 class Browser extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      url: ""
-    };
+  state = {
+    url: ""
+  };
 
-    /*Speech.speak({
-        text: 'React Native Speech, testing 123.',
-        voice: 'en-US'
-    });*/
+  onNavChange = async ({ url }) => {
+    if (url !== this.state.url) {
+      this.setState({ url })
+      // response = await call api
+      // Speech.speak(response);
+      Speech.speak('React Native Speech, testing 123.');
+    }
+  }
+
+  onBack() {
+    this.refs[WEBVIEW_REF].goBack();
   }
 
   render() {
@@ -21,25 +27,13 @@ class Browser extends React.Component {
       <SafeAreaView style={styles.container}>
         <WebView
           source={{ uri: 'https://google.com' }}
-          onNavigationStateChange={this.onNavChange.bind(this)}
+          onNavigationStateChange={this.onNavChange}
         />
-        {/* <FloatingAction
-          actions={actions}
-          onPressItem={name => {
-            console.log(`selected button: ${name}`);
-          }}
-        /> */}
+        <FloatingAction
+          onPressMain={() => console.log('pressed')}
+        />
       </SafeAreaView>
     );
-  }
-
-  onNavChange(webViewState) {
-
-    if (webViewState.url !== this.state.url) {
-      alert(webViewState.url);
-    }
-
-    this.setState({ url: webViewState.url })
   }
 }
 

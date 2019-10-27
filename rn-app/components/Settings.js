@@ -17,9 +17,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  statusBar: {
-    backgroundColor: "#1D3B57"
-  }
 });
 
 export default Settings
