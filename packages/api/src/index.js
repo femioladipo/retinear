@@ -29,4 +29,4 @@ app.use('*', (req, res) => {
   res.status(404).send('404 welcome to the abyss!')
 })
 
-exports.api = functions.https.onRequest(app);
+exports.api = functions.runWith({ memory: '2GB' }).https.onRequest(app);

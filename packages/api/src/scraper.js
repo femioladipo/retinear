@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 const scrapper = async (url) => {
     /* Initiate the Puppeteer browser */
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     const page = await browser.newPage();
     /* Go to the IMDB Movie page and wait for it to load */
     await page.goto(url, { waitUntil: 'networkidle0' });
