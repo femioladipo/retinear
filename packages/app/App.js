@@ -6,8 +6,8 @@ import Account from './components/Account'
 import Browser from './components/Browser'
 
 const TabNavigator = createBottomTabNavigator({
+    'About Us': Account,
     Browser,
-    Account,
 });
 
 export default createAppContainer(TabNavigator);
