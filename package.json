@@ -11,5 +11,8 @@
   "scripts": {
     "test": "learn run test",
     "build": "learn run build"
+  },
+  "dependencies": {
+    "psl": "^1.4.0"
   }
 }

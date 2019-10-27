@@ -6,7 +6,6 @@ const getTextSummary = require('./text_summary')
 const { getImageDescription, getImageTags } = require('./vision');
 const readingTime = require('./length')
 
-
 const app = express()
 
 const constructFinalStatement = (websiteName, timeToRead, imageCaptions, textSummary) => `
@@ -29,4 +28,4 @@ app.use('*', (req, res) => {
   res.status(404).send('404 welcome to the abyss!')
 })
 
-exports.api = functions.https.onRequest(app);
+exports.api = functions.runWith({ memory: '2GB' }).https.onRequest(app);
