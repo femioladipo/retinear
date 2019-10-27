@@ -3,7 +3,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { FloatingAction } from "react-native-floating-action";
 import * as Speech from 'expo-speech';
-import axios from 'axios';
+import parseDomain from 'parse-domain'
 
 class Browser extends React.Component {
   state = {
@@ -11,9 +11,12 @@ class Browser extends React.Component {
     canGoBack: false
   };
 
+  WEBVIEW_REF = React.createRef();
+
   onNavChange = async ({ url }) => {
-    if (url !== this.state.url) {
-      this.setState({ url });
+    console.log(parseDomain(url), url)
+    if (parseDomain(url).domain !== 'google' && url !== this.state.url) {
+      this.setState({ url, canGoBack: true });
       console.log(url)
       const res = await fetch('https://us-central1-retinear-3f1c7.cloudfunctions.net/api', {
         method: 'POST',
@@ -26,8 +29,8 @@ class Browser extends React.Component {
     }
   }
 
-  onBack() {
-    this.refs[WEBVIEW_REF].goBack();
+  onBack = () => {
+    this.WEBVIEW_REF.goBack();
     this.setState({ canGoBack: false })
   }
 
@@ -35,14 +38,15 @@ class Browser extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <WebView
+          ref={ref => {
+            this.WEBVIEW_REF = ref
+          }}
           source={{ uri: 'https://google.com' }}
           onNavigationStateChange={this.onNavChange}
         />
-        {this.state.canGoBack &&
-          <FloatingAction
-            onPressMain={() => console.log('pressed')}
-          />
-        }
+        <FloatingAction
+          onPressMain={this.onBack}
+        />
       </SafeAreaView>
     );
   }
