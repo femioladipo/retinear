@@ -20,19 +20,14 @@ const scrapper = async (url) => {
     let data = await page.evaluate(() => {
         let title = document.querySelector('h1').innerText;
         let img_urls = Array.from(document.querySelectorAll('img')).map(i => i.src); //waits to receive url images
-<<<<<<< HEAD
-        let text = Array.from(document.querySelectorAll('p')).map(p => p.innerText).join(", "); //waits to receive url images
-
-
-=======
-        let textf = Array.from(document.querySelectorAll('p')); //waits to receive url images
-        let leng = textf.length;
+        let paragraph = Array.from(document.querySelectorAll('p')); //waits to receive url images
+        let leng = paragraph.length;
         let textFiltered = [];
         for(let i=Math.floor(leng*0.15);i<Math.floor(leng*0.8); i++){
-            textFiltered.push(textf[i]);
+            textFiltered.push(paragraph[i]);
         }
         let text = textFiltered.map(p => p.innerText).join(", ");
->>>>>>> 10351decaaf4a309a66a7fd87ffd2e2cf78bba94
+
         /* Returning an object filled with the scraped data */
 
         return {
