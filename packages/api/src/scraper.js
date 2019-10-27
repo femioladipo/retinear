@@ -10,8 +10,13 @@ const scrapper = async (url) => {
     let data = await page.evaluate(() => {
         let title = document.querySelector('h1').innerText;
         let img_urls = Array.from(document.querySelectorAll('img')).map(i => i.src); //waits to receive url images
-        let text = Array.from(document.querySelectorAll('p')).map(p => p.innerText).join(", "); //waits to receive url images
-
+        let textf = Array.from(document.querySelectorAll('p')); //waits to receive url images
+        let leng = textf.length;
+        let textFiltered = [];
+        for(let i=Math.floor(leng*0.15);i<Math.floor(leng*0.8); i++){
+            textFiltered.push(textf[i]);
+        }
+        let text = textFiltered.map(p => p.innerText).join(", ");
         /* Returning an object filled with the scraped data */
         return {
             webSiteName: "",
@@ -28,4 +33,7 @@ const scrapper = async (url) => {
 
 module.exports = exports = scrapper
 
-// scrapper("https://www.nytimes.com/2019/10/24/business/wework-growth.html")
+scrapper("https://www.theguardian.com/politics/2019/oct/26/britain-faces-axe-europe-elite-policing-unit")
+.then(res => console.log(res))
+.catch(err => console.log(err))
+
