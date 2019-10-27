@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-reanimated
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-speech
 
 PATH: 
-  C:\Users\fab\Desktop\Career\retinear\rn-app\node_modules\.bin;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\\bin;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\\bin\server;C:\Intel\OpenCL\sdk\bin\x64;C:\Intel\OpenCL\sdk\bin\x86;C:\Intel\OpenCL\sdk\bin\Pin;C:\Intel\OpenCL\sdk\bin\GTPin;C:\Program Files\Java\jdk-11.0.1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;"C:\Python37\;C:\Python37\Scripts\";C:\cygwin64\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\CMake\bin;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\fab\Downloads\apache-maven-3.6.0-bin\apache-maven-3.6.0\bin;C:\Android\android-sdk\tools;C:\Android\android-sdk\platform-tools;C:\Android\android-sdk\tools\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Go\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-11.0.1\bin;C:\Python37\Scripts;C:\Python37;C:\Program Files\nodejs;C:\tools\dart-sdk\bin;C:\Users\fab\AppData\Roaming\Pub\Cache\bin;C:\Program Files\Git\cmd;C:\Users\fab\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Users\fab\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\fab\AppData\Roaming\Python\Python37\Scripts;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Users\fab\go\bin;C:\Program Files\gs\gs9.27\bin;C:\Program Files\gs\gs9.27\lib;C:\Users\fab\AppData\Local\Yarn\bin
+  C:\Intel\OpenCL\sdk\bin\x64;C:\Intel\OpenCL\sdk\bin\x86;C:\Intel\OpenCL\sdk\bin\Pin;C:\Intel\OpenCL\sdk\bin\GTPin;C:\Program Files\Java\jdk-11.0.1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;"C:\Python37\;C:\Python37\Scripts\";C:\cygwin64\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\CMake\bin;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\fab\Downloads\apache-maven-3.6.0-bin\apache-maven-3.6.0\bin;C:\Android\android-sdk\tools;C:\Android\android-sdk\platform-tools;C:\Android\android-sdk\tools\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Go\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Python37\Scripts;C:\tools\dart-sdk\bin;C:\Users\fab\AppData\Roaming\Pub\Cache\bin;C:\Users\fab\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Users\fab\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\fab\AppData\Roaming\Python\Python37\Scripts;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Users\fab\go\bin;C:\Program Files\gs\gs9.27\bin;C:\Program Files\gs\gs9.27\lib;C:\Users\fab\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.19.1
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ENETUNREACH 104.16.24.35:443
+  Error: connect ENETUNREACH 104.16.25.35:443
       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1128:14)
 
 npm manifest: 
@@ -32,8 +32,10 @@ npm manifest:
       "react": "16.8.3",
       "react-dom": "16.8.3",
       "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+      "react-native-gesture-handler": "^1.4.1",
+      "react-native-reanimated": "^1.3.0",
       "react-native-web": "^0.11.7",
-      "react-native-webview": "^7.4.3",
+      "react-native-webview": "7.0.5",
       "react-navigation": "^4.0.10",
       "react-navigation-tabs": "^2.5.6"
     },
@@ -1922,12 +1924,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
     integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
   
-  escape-string-regexp@2.0.0:
-    version "2.0.0"
-    resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
-    integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
-  
-  escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
+  escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
     version "1.0.5"
     resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
     integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
@@ -2507,6 +2504,11 @@ Lockfile:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
     integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
+  
+  hammerjs@^2.0.8:
+    version "2.0.8"
+    resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+    integrity sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
   
   has-ansi@^2.0.0:
     version "2.0.0"
@@ -4184,7 +4186,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+  prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -4292,6 +4294,21 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-3.0.1.tgz#5b07b61cbd290168cd3c3662e017ebe0f356d2ca"
     integrity sha512-vbcYxPZlpF5f39GAEUF8kuGQqCNeD3E6zEdvtOq8oCGZunHXlWlKgAS6dgBKCvsHvXgHuMtpvs39VgOp8DaKig==
   
+  react-native-gesture-handler@^1.4.1:
+    version "1.4.1"
+    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.4.1.tgz#c38d9e57637b95e221722a79f2bafac62e3aeb21"
+    integrity sha512-Ffcs+SbEbkGaal0CClYL+v7A9y4OA5G5lW01qrzjxaqASp5C8BfnWSKuqYKE00s6bLwE5L4xnlHkG0yIxAtbrQ==
+    dependencies:
+      hammerjs "^2.0.8"
+      hoist-non-react-statics "^2.3.1"
+      invariant "^2.2.4"
+      prop-types "^15.7.2"
+  
+  react-native-reanimated@^1.3.0:
+    version "1.3.0"
+    resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.3.0.tgz#581cdb0bd1ff05e7304b116af712ded0c7665ede"
+    integrity sha512-KFno6D0q09kx71IDuPa4qeC1t1msALsCMuli3/EN3YDf8XoM2CG53yzhVHMFtmcW0IUCySugHgxQiuT5BzwOPA==
+  
   react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6:
     version "0.14.8"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
@@ -4332,12 +4349,12 @@ Lockfile:
       prop-types "^15.6.0"
       react-timer-mixin "^0.13.4"
   
-  react-native-webview@^7.4.3:
-    version "7.4.3"
-    resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-7.4.3.tgz#e00e92e17f7389d84d09f5900652501ff2665915"
-    integrity sha512-4n72B2D7n1xOQSoCSD1qk9D7JksyT4d6nk8QG9guZKZn3KXQL5EejwE2yhh1TxZRQpr+OD3a96rb+rA/UEnvrQ==
+  react-native-webview@7.0.5:
+    version "7.0.5"
+    resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-7.0.5.tgz#1dd9d4f2856bda86a40222eca3612bf2152bacd3"
+    integrity sha512-FWY3tjbyV3Uhuw1JxJ0zs2HspJ5HAsIfkJaquURsVWQnTdZPnkSQjHWQp0PzGIwJ1PPVOA/gnhRmd7SZU/Br5Q==
     dependencies:
-      escape-string-regexp "2.0.0"
+      escape-string-regexp "1.0.5"
       invariant "2.2.4"
   
   "react-native@https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz":

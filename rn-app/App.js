@@ -4,16 +4,29 @@ import { WebView } from 'react-native-webview';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {StatusBar} from 'react-native';
+import Speech from 'react-native-speech';
 
 interface IProps {
 
 }
 
 interface IState {
-
+    url: string;
 }
 
 class Browser extends React.Component<IProps, IState> {
+
+    constructor() {
+        super();
+        this.state = {
+            url: ""
+        };
+
+        /*Speech.speak({
+            text: 'React Native Speech, testing 123.',
+            voice: 'en-US'
+        });*/
+    }
 
   render() {
       return (
@@ -28,7 +41,12 @@ class Browser extends React.Component<IProps, IState> {
   }
 
   onNavChange(webViewState) {
-      alert(webViewState.url);
+
+      if (webViewState.url !== this.state.url) {
+          alert(webViewState.url);
+      }
+
+      this.setState({ url: webViewState.url })
   }
 }
 
@@ -62,4 +80,6 @@ const styles = StyleSheet.create({
 });
 
 export default createAppContainer(TabNavigator);
+
+
 
