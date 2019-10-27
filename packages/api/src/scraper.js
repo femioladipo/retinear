@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 const scrapper = async (url) => {
     /* Initiate the Puppeteer browser */
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     /* Go to the IMDB Movie page and wait for it to load */
     await page.goto(url, { waitUntil: 'networkidle0' });
@@ -32,8 +32,4 @@ const scrapper = async (url) => {
 };
 
 module.exports = exports = scrapper
-
-scrapper("https://www.theguardian.com/politics/2019/oct/26/britain-faces-axe-europe-elite-policing-unit")
-.then(res => console.log(res))
-.catch(err => console.log(err))
 
