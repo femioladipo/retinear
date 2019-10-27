@@ -1,9 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Container, Header, Content, Footer, Text, View } from 'native-base';
+import { StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {StatusBar} from 'react-native';
+
 
 interface IProps {
 
@@ -34,16 +36,20 @@ class Browser extends React.Component<IProps, IState> {
 
 class Settings extends React.Component {
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.statusBar} />
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Settings!</Text>
-            </View>
-            </View>
-        );
-    }
+  render() {
+    return (
+        <Container>
+          <Header />
+          <Content padder>
+            <Text>
+              This is Content Section
+            </Text>
+          </Content>
+          <Footer />
+        </Container>
+      );
+  }
+
 }
 
 const TabNavigator = createBottomTabNavigator({
@@ -62,4 +68,3 @@ const styles = StyleSheet.create({
 });
 
 export default createAppContainer(TabNavigator);
-

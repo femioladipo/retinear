@@ -19,13 +19,9 @@ import {HttpClientModule} from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-<<<<<<< HEAD
     InAppBrowser,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-=======
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     HttpClientModule
->>>>>>> e9673c669c7bc912510c5ca4a7004dff40cc7a09
   ],
   bootstrap: [AppComponent]
 })

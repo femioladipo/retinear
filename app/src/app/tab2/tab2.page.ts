@@ -35,7 +35,7 @@ export class Tab2Page implements OnInit{
   }
 
   public loadStartCallBack(){
-    console.log("I guess they never miss huh")
+    console.log($('#status-message'));
   }
 
 }
