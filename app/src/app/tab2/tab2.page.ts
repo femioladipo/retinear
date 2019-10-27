@@ -17,9 +17,9 @@ export class Tab2Page implements OnInit {
 
   public grabSearch(){
     this.platform.ready().then(() => {
-      const browser = new InAppBrowser();
-      browser.create('https://www.google.co.uk/','_self','location=yes');
-      //browser.on("loadstop").subscribe(()=> console.log("loadstop"));
+      const browser = (new InAppBrowser()) as any;
+      browser.create('https://www.google.co.uk/', '_blank', 'location=yes');
+        browser.on('loadstop').subscribe(() => console.log('loadstop'));
     });
   }
 
