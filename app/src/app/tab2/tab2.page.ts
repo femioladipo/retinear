@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -7,7 +7,7 @@ import { Platform } from '@ionic/angular';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit {
+export class Tab2Page implements OnInit{
 
   constructor(private platform: Platform) {}
 
@@ -16,11 +16,27 @@ export class Tab2Page implements OnInit {
   }
 
   public grabSearch(){
-    this.platform.ready().then(() => {
-      const browser = (new InAppBrowser()) as any;
-      browser.create('https://www.google.co.uk/', '_blank', 'location=yes');
-        browser.on('loadstop').subscribe(() => console.log('loadstop'));
-    });
+
+    var browserTargets = "_blank"
+    var browserOptions ="location=yes"
+    var browserLink = "https://www.google.co.uk/"
+
+    const localCordova = <any> cordova;
+    var dayMan = localCordova.InAppBrowser.open(browserLink, browserTargets, browserOptions);
+
+    dayMan.addEventListener('loadstart',this.loadStartCallBack());
+
+    //const browser = new InAppBrowser();
+    //browser.create(browserLink, browserTargets, browserOptions);
+    //browser.addEventListener('loadstart', this.loadStartCallBack());
+    //browser.on("loadstart").subscribe(() => {
+      //console.log("I guess they never miss huh?")
+    //});
+
+  }
+
+  public loadStartCallBack(){
+    console.log("I guess they never miss huh")
   }
 
 }
