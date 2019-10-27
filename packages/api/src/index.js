@@ -19,10 +19,10 @@ app.post('/', async (req, res) => {
   const data = await getSiteJSON(req.body.url)
   const { websiteName, title, text, img_urls } = data
   const textSummary = await getTextSummary(text)
-  console.log(img_urls)
+  // console.log(img_urls)
   const timeToRead = readingTime(text)
   const imageCaptions = await Promise.all(img_urls.map(img_url => getImageDescription(img_url)))
-  console.log(imageCaptions)
+  // console.log(imageCaptions)
   return res.send(constructFinalStatement(websiteName, timeToRead, imageCaptions, textSummary))
 })
 

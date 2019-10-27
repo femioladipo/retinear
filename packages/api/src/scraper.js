@@ -16,7 +16,9 @@ const scrapper = async (url) => {
     let data = await page.evaluate(() => {
         let title = document.querySelector('h1').innerText;
         let img_urls = Array.from(document.querySelectorAll('img')).map(img => img.src); //waits to receive url images
-        let text = Array.from(document.querySelectorAll('p')).map(p => p.innerText).join(', ');
+        let text = Array.from(document.querySelectorAll('p'))
+            .filter(p => p)
+            .map(p => p.innerText).join(', ');
 
         /* Returning an object filled with the scraped data */
         return {
