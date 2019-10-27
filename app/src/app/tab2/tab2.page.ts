@@ -16,6 +16,7 @@ export class Tab2Page implements OnInit{
   }
 
   public grabSearch(){
+
     var browserTargets = "_blank"
     var browserOptions ="location=yes"
     var browserLink = "https://www.google.co.uk/"
