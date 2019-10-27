@@ -1,24 +1,34 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-speech
+  /usr/local/Cellar/node@10/10.16.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add expo-speec
 
 PATH: 
-  C:\Intel\OpenCL\sdk\bin\x64;C:\Intel\OpenCL\sdk\bin\x86;C:\Intel\OpenCL\sdk\bin\Pin;C:\Intel\OpenCL\sdk\bin\GTPin;C:\Program Files\Java\jdk-11.0.1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;"C:\Python37\;C:\Python37\Scripts\";C:\cygwin64\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\CMake\bin;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\fab\Downloads\apache-maven-3.6.0-bin\apache-maven-3.6.0\bin;C:\Android\android-sdk\tools;C:\Android\android-sdk\platform-tools;C:\Android\android-sdk\tools\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Go\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\fab\AppData\Local\Programs\Python\Python37-32\;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Python37\Scripts;C:\tools\dart-sdk\bin;C:\Users\fab\AppData\Roaming\Pub\Cache\bin;C:\Users\fab\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Users\fab\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\fab\AppData\Roaming\Python\Python37\Scripts;C:\Users\fab\AppData\Local\Microsoft\WindowsApps;C:\Users\fab\go\bin;C:\Program Files\gs\gs9.27\bin;C:\Program Files\gs\gs9.27\lib;C:\Users\fab\AppData\Local\Yarn\bin
+  /usr/local/opt/node@10/bin:/Users/foladipo/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/opt/node@10/bin:/Users/foladipo/bin:/usr/local/Caskroom/miniconda/4.6.14/miniconda3/bin:/usr/local/Caskroom/miniconda/4.6.14/miniconda3/condabin
 
 Yarn version: 
-  1.19.1
+  1.17.3
 
 Node version: 
-  12.13.0
+  10.16.0
 
 Platform: 
-  win32 x64
+  darwin x64
 
 Trace: 
-  Error: connect ENETUNREACH 104.16.25.35:443
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1128:14)
+  Error: https://registry.yarnpkg.com/expo-speec: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:140464:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141436:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
+    "private": true,
     "main": "node_modules/expo/AppEntry.js",
     "scripts": {
       "start": "expo start",
@@ -32,8 +42,10 @@ npm manifest:
       "react": "16.8.3",
       "react-dom": "16.8.3",
       "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+      "react-native-floating-action": "^1.19.1",
       "react-native-gesture-handler": "^1.4.1",
       "react-native-reanimated": "^1.3.0",
+      "react-native-speech": "^0.1.2",
       "react-native-web": "^0.11.7",
       "react-native-webview": "7.0.5",
       "react-navigation": "^4.0.10",
@@ -41,8 +53,7 @@ npm manifest:
     },
     "devDependencies": {
       "babel-preset-expo": "^7.1.0"
-    },
-    "private": true
+    }
   }
 
 yarn manifest: 
@@ -4322,6 +4333,11 @@ Lockfile:
     integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
     dependencies:
       debounce "^1.2.0"
+  
+  react-native-speech@^0.1.2:
+    version "0.1.2"
+    resolved "https://registry.yarnpkg.com/react-native-speech/-/react-native-speech-0.1.2.tgz#c16127c6a61351eeddb7878db80709f7ce6a7057"
+    integrity sha1-wWEnxqYTUe7dt4eNuAcJ985qcFc=
   
   react-native-tab-view@^2.9.0:
     version "2.10.0"
