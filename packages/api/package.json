@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "firebase-admin": "^8.6.0",
     "firebase-functions": "^3.3.0",
+    "parse-domain": "^2.3.2",
     "puppeteer": "^2.0.0",
     "request": "^2.88.0"
   },
