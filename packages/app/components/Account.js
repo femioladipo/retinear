@@ -12,12 +12,12 @@ class Account extends React.Component {
           source = {require("../assets/teamLogo.png")}
           />
 
-          <Text>We are the Retinaear Team {"\n"}  {"\n"}
+          <Text>We are the Retinear Team {"\n"}  {"\n"}
           Our aim is to provide individuals with disabilities a better experience of Google Search {"\n"}  {"\n"}
           We provide users with an additional perception - where the app helps them understand the websites better for a smoother browsing experience</Text>
 
         </View>
-        
+
       </SafeAreaView>
     );
   }
